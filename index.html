@@ -155,8 +155,10 @@
 
         <!-- Products Dropdown -->
         <div class="nav-item dropdown">
-            <a href="products.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
-            <div class="dropdown-menu rounded">
+    <a href="products.html" class="nav-link dropdown-toggle" role="button">
+        Products
+    </a>
+    <div class="dropdown-menu rounded">
 			
                 <!-- Audco Valves -->
                 <div class="dropdown-submenu">
@@ -1501,12 +1503,17 @@ function showSuccessPopup() {
 </script>
 
 
-
+document.querySelectorAll('.nav-item.dropdown > a').forEach(function(el){
+    el.addEventListener('click', function(e){
+        window.location = this.getAttribute('href');
+    });
+});
 
 
     </body>
 
 </html>
+
 
 
 
