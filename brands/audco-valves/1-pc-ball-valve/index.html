@@ -134,33 +134,22 @@ class="btn btn-dark">
 <!-- ================= LOAD HEADER + FOOTER ================= -->
 
 <script>
+document.addEventListener("DOMContentLoaded", async function () {
 
-document.addEventListener("DOMContentLoaded", function(){
+const header = await fetch("../../../includes/header.html");
+document.getElementById("header").innerHTML = await header.text();
 
-fetch("../../../includes/header.html")
-.then(res => res.text())
-.then(data => {
-    document.getElementById("header").innerHTML = data;
-
-    // Load main.js AFTER header loads
-    const script = document.createElement("script");
-    script.src = "../../../js/main.js";
-    document.body.appendChild(script);
-});
-
-fetch("../../../includes/footer.html")
-.then(res => res.text())
-.then(data => {
-    document.getElementById("footer").innerHTML = data;
-});
+const footer = await fetch("../../../includes/footer.html");
+document.getElementById("footer").innerHTML = await footer.text();
 
 });
-
 </script>
 
 <!-- JS FILES -->
+<script src="../../../js/main.js"></script>
 <script src="../../../js/bootstrap.bundle.min.js"></script>
 <script src="../../../js/location-directions.js"></script>
+
 
 <body data-bs-spy="scroll">
 
