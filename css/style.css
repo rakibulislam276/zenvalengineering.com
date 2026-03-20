@@ -1299,3 +1299,11 @@ line-height:1.7;
     from {transform: translateY(30px); opacity: 0;}
     to {transform: translateY(0); opacity: 1;}
 }
+
+
+
+html, body {
+    overflow-x: hidden;
+}
+
+
