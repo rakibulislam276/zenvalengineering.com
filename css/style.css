@@ -378,20 +378,6 @@
     100%  {left: 0px;}
 }
 
-.header-carousel .header-carousel-item::before {
-    content: "";
-    position: absolute;
-    width: 300px;
-    height: 1200px;
-    top: -150px;
-    left: -265px;
-    transform: rotate(-30deg);
-    background: var(--bs-dark);
-    animation: RotateMoveLeft 5s linear infinite;
-    opacity: 0.7;
-    z-index: 2 !important;
-}
-
 @keyframes RotateMoveLeft {
     0%   {left: -240px;}
     50%   {left: -300px;}
