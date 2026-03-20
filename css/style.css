@@ -348,6 +348,7 @@
     animation: RotateMoveCircle 10s linear infinite;
     background: transparent;
     z-index: 2 !important;
+    display: none !important;
 }
 
 @keyframes RotateMoveCircle {
@@ -370,6 +371,7 @@
     background: rgba(68, 210, 246, 0.2);
     animation: RotateMoveRight 5s linear infinite;
     z-index: 2 !important;
+    display: none !important;
 }
 
 @keyframes RotateMoveRight {
