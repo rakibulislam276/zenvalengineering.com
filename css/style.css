@@ -293,7 +293,6 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
-    min-height: 60vh;
 }
 
 .owl-prev,
@@ -310,7 +309,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 .owl-prev {
@@ -348,7 +347,6 @@
     animation: RotateMoveCircle 10s linear infinite;
     background: transparent;
     z-index: 2 !important;
-    display: none !important;
 }
 
 @keyframes RotateMoveCircle {
@@ -371,13 +369,26 @@
     background: rgba(68, 210, 246, 0.2);
     animation: RotateMoveRight 5s linear infinite;
     z-index: 2 !important;
-    display: none !important;
 }
 
 @keyframes RotateMoveRight {
     0%   {left: 0px;}
     50%   {left: 70px;}
     100%  {left: 0px;}
+}
+
+.header-carousel .header-carousel-item::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 1200px;
+    top: -150px;
+    left: -265px;
+    transform: rotate(-30deg);
+    background: var(--bs-dark);
+    animation: RotateMoveLeft 5s linear infinite;
+    opacity: 0.7;
+    z-index: 2 !important;
 }
 
 @keyframes RotateMoveLeft {
@@ -400,7 +411,7 @@
 .header-carousel .header-carousel-item .carousel-caption {
     position: absolute;
     width: 80%;
-    height: auto%;
+    height: 100%;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -429,13 +440,6 @@
     .owl-prev {
         left: 65%;
     }
-
-    @media (max-width: 768px) {
-    .header-carousel .header-carousel-item {
-        min-height: auto;
-        padding: 60px 15px;
-    }
-}
 }
 /*** Header Carousel End ***/
 
@@ -1294,6 +1298,3 @@ line-height:1.7;
     from {transform: translateY(30px); opacity: 0;}
     to {transform: translateY(0); opacity: 1;}
 }
-
-
-
