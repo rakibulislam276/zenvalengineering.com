@@ -206,76 +206,131 @@
 }
 
 /* ===============================
-   MULTI-LEVEL DROPDOWN – FINAL FIX
+   MULTI-LEVEL DROPDOWN — DESKTOP
 ================================ */
 
-/* ---------- Base dropdown reset ---------- */
+/* ---------- Base: hidden by default on ALL screen sizes ---------- */
 .navbar .dropdown-menu {
-    display: block;              /* keep hover chain */
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
+    display: none;
     margin-top: 0 !important;
-    transform: translateY(8px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-/* ---------- LEVEL 1: Products → Brands ---------- */
-.navbar .nav-item.dropdown:hover > .dropdown-menu {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-    background: var(--bs-light);
-    border-radius: 8px;
+/* ---------- DESKTOP (≥992px): hover-based reveal ---------- */
+@media (min-width: 992px) {
+    .navbar .dropdown-menu {
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(8px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    /* Level 1: Products → Brand list */
+    .navbar .nav-item.dropdown:hover > .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+        background: var(--bs-light);
+        border-radius: 8px;
+    }
+
+    /* Level 2: Brand → Product list (fly-out to the right) */
+    .dropdown-submenu > .dropdown-menu {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        padding-left: 8px;
+        transform: translateX(8px);
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(0);
+    }
+
+    .dropdown-submenu > .dropdown-menu:hover {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+    }
 }
 
-/* ---------- LEVEL 2: Brand containers ---------- */
+/* ---------- MOBILE (< 992px): click/tap-based accordion ---------- */
+@media (max-width: 991.98px) {
+    /* All dropdowns hidden until .show is added by Bootstrap JS */
+    .navbar .dropdown-menu {
+        display: none !important;
+        border: none;
+        box-shadow: none;
+        background: #f8f9fa;
+        padding-left: 15px;
+    }
+
+    .navbar .dropdown-menu.show {
+        display: block !important;
+    }
+
+    /* Submenu dropdowns inside mobile nav */
+    .dropdown-submenu > .dropdown-menu {
+        position: static !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        padding-left: 15px;
+        display: none !important;
+    }
+
+    .dropdown-submenu > .dropdown-menu.show {
+        display: block !important;
+    }
+
+    /* Make brand labels clickable on mobile */
+    .brand-menu {
+        cursor: pointer !important;
+    }
+
+    /* Remove fly-out arrow on mobile */
+    .dropdown-submenu > .brand-menu::after {
+        content: "▾";
+        float: right;
+        font-size: 12px;
+        margin-top: 2px;
+    }
+}
+
+/* ---------- Shared styles (all screen sizes) ---------- */
+
+/* Brand containers */
 .dropdown-submenu {
     position: relative;
 }
 
-/* Brand menu (not clickable) */
-.brand-menu {
-    cursor: default;
-    user-select: none;
+/* Desktop arrow indicator */
+@media (min-width: 992px) {
+    .dropdown-submenu > .brand-menu::after {
+        content: "›";
+        float: right;
+        font-size: 14px;
+    }
 }
 
-/* ---------- LEVEL 3: Brand → Submenus ---------- */
-.dropdown-submenu > .dropdown-menu {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    padding-left: 8px;           /* hover bridge */
-    transform: translateX(8px);
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
+/* Brand menu label (desktop: not clickable) */
+@media (min-width: 992px) {
+    .brand-menu {
+        cursor: default;
+        user-select: none;
+    }
 }
 
-/* Show submenu ONLY when hovering that brand */
-.dropdown-submenu:hover > .dropdown-menu {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(0);
-}
-
-/* Keep submenu alive while cursor is inside */
-.dropdown-submenu > .dropdown-menu:hover {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* Arrow indicator */
-.dropdown-submenu > .brand-menu::after {
-    content: "›";
-    float: right;
-    font-size: 14px;
-}
-
-/* Hover effect */
+/* Hover highlight */
 .dropdown-menu .dropdown-item:hover {
     background: var(--bs-primary);
     color: var(--bs-white);
