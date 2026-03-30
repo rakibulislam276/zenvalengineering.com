@@ -1385,6 +1385,129 @@ line-height:1.7;
     }
 }
 
+/* ─── MOBILE MENU: Big, finger-friendly, professional ─── */
+@media (max-width: 991.98px) {
+
+    /* The collapsed menu panel */
+    #navbarCollapse {
+        background: #ffffff;
+        border-top: 3px solid #0d6efd;
+        padding: 10px 0 20px 0;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        border-radius: 0 0 12px 12px;
+    }
+
+    /* Each nav link row */
+    .navbar .navbar-nav .nav-link {
+        font-size: 17px !important;
+        font-weight: 600 !important;
+        color: #1a1a2e !important;
+        padding: 14px 24px !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+        margin: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        letter-spacing: 0.3px;
+    }
+
+    /* Remove the border animation pseudo elements on mobile */
+    .navbar .navbar-nav .nav-item::before,
+    .navbar .navbar-nav .nav-item::after {
+        display: none !important;
+    }
+
+    /* Nav items: no side margin on mobile */
+    .navbar .navbar-nav .nav-item {
+        margin: 0 !important;
+    }
+
+    /* Active link highlight */
+    .navbar .navbar-nav .nav-link.active,
+    .navbar .navbar-nav .nav-link:hover {
+        color: #0d6efd !important;
+        background: #f0f6ff !important;
+    }
+
+    /* Products toggle row */
+    #productsDropdownToggle {
+        font-size: 17px !important;
+        font-weight: 600 !important;
+        color: #1a1a2e !important;
+        padding: 14px 24px !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        cursor: pointer;
+        text-decoration: none !important;
+        width: 100%;
+    }
+
+    #productsDropdownToggle:hover,
+    #productsDropdownToggle[aria-expanded="true"] {
+        color: #0d6efd !important;
+        background: #f0f6ff !important;
+    }
+
+    /* Products dropdown panel */
+    .navbar .nav-item.dropdown > .dropdown-menu {
+        border: none !important;
+        border-radius: 0 !important;
+        background: #f8faff !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+    }
+
+    /* "View All Products" link inside dropdown */
+    .navbar .dropdown-menu > .dropdown-item {
+        font-size: 15px !important;
+        padding: 12px 30px !important;
+        border-bottom: 1px solid #eaeaea !important;
+        font-weight: 700;
+        color: #0d6efd !important;
+    }
+
+    /* Brand name labels (Audco, Forbes Marshall etc.) */
+    .dropdown-submenu .brand-menu {
+        font-size: 15px !important;
+        font-weight: 700 !important;
+        color: #1a1a2e !important;
+        padding: 12px 30px !important;
+        border-bottom: 1px solid #eaeaea !important;
+        background: #eef4ff;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        cursor: pointer !important;
+    }
+
+    .dropdown-submenu .brand-menu:hover {
+        background: #ddeaff !important;
+        color: #0d6efd !important;
+    }
+
+    /* Brand submenu items (individual valve products) */
+    .dropdown-submenu .dropdown-menu .dropdown-item {
+        font-size: 14px !important;
+        padding: 11px 42px !important;
+        border-bottom: 1px solid #f5f5f5 !important;
+        color: #444 !important;
+        white-space: normal !important;
+        line-height: 1.4 !important;
+    }
+
+    .dropdown-submenu .dropdown-menu .dropdown-item:hover {
+        background: #0d6efd !important;
+        color: #fff !important;
+    }
+
+    /* Hamburger button - make it bigger and more tappable */
+    .navbar .navbar-toggler {
+        padding: 10px 18px !important;
+        font-size: 18px !important;
+    }
+}
+
 /* ─── 2. HERO CAROUSEL: Text sizing & button layout ─── */
 @media (max-width: 767px) {
     .header-carousel-item img {
