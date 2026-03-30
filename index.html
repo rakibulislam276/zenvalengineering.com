@@ -184,7 +184,7 @@
 
         <!-- Products Dropdown -->
         <div class="nav-item dropdown">
-    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+    <a href="#" class="nav-link dropdown-toggle" id="productsDropdownToggle">
         Products
     </a>
     <div class="dropdown-menu rounded">
@@ -1431,12 +1431,39 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-<!-- Mobile: tap brand label to expand its submenu -->
+<!-- Mobile: tap "Products" and brand labels to expand submenus -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+
+    var productsToggle = document.getElementById("productsDropdownToggle");
+    var productsMenu = productsToggle ? productsToggle.nextElementSibling : null;
+
+    // ── Products toggle (tap to open/close the whole dropdown) ──
+    if (productsToggle && productsMenu) {
+        productsToggle.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            if (window.innerWidth >= 992) {
+                // Desktop: do nothing, CSS hover handles it
+                return;
+            }
+
+            var isOpen = productsMenu.classList.contains("show");
+
+            // Close everything first
+            closeAllDropdowns();
+
+            if (!isOpen) {
+                productsMenu.classList.add("show");
+                productsToggle.setAttribute("aria-expanded", "true");
+            }
+        });
+    }
+
+    // ── Brand labels (Audco, Forbes Marshall, etc.) ──
     document.querySelectorAll(".dropdown-submenu .brand-menu").forEach(function (label) {
         label.addEventListener("click", function (e) {
-            // Only intercept on mobile (navbar collapsed)
             if (window.innerWidth >= 992) return;
 
             e.preventDefault();
@@ -1447,27 +1474,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
             var isOpen = submenu.classList.contains("show");
 
-            // Close all other open submenus first
+            // Close other brand submenus
             document.querySelectorAll(".dropdown-submenu .dropdown-menu.show").forEach(function (el) {
                 el.classList.remove("show");
             });
 
-            // Toggle this one
             if (!isOpen) {
                 submenu.classList.add("show");
             }
         });
     });
 
-    // Close submenus when main navbar collapses
+    // ── Close everything when tapping outside ──
+    document.addEventListener("click", function (e) {
+        if (window.innerWidth >= 992) return;
+        if (!e.target.closest(".nav-item.dropdown")) {
+            closeAllDropdowns();
+        }
+    });
+
+    // ── Close everything when main navbar collapses ──
     var navbarCollapse = document.getElementById("navbarCollapse");
     if (navbarCollapse) {
         navbarCollapse.addEventListener("hidden.bs.collapse", function () {
-            document.querySelectorAll(".dropdown-submenu .dropdown-menu.show").forEach(function (el) {
-                el.classList.remove("show");
-            });
+            closeAllDropdowns();
         });
     }
+
+    function closeAllDropdowns() {
+        if (productsMenu) {
+            productsMenu.classList.remove("show");
+        }
+        if (productsToggle) {
+            productsToggle.setAttribute("aria-expanded", "false");
+        }
+        document.querySelectorAll(".dropdown-submenu .dropdown-menu.show").forEach(function (el) {
+            el.classList.remove("show");
+        });
+    }
+
 });
 </script>
 
