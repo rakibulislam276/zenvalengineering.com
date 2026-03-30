@@ -127,8 +127,8 @@
 								target="_blank"
 								rel="noopener">
 							<i class="fab fa-whatsapp text-success me-2"></i>+91 94235 69124</a>
-                            <a href="mailto:info@zenvalengineering.com" class="text-muted me-0">
-							<i class="fas fa-envelope text-primary me-2"></i>info@zenvalengineering.com</a>
+                            <a href="/cdn-cgi/l/email-protection#9ff6f1f9f0dfe5faf1e9fef3faf1f8f6f1fafaedf6f1f8b1fcf0f2" class="text-muted me-0">
+							<i class="fas fa-envelope text-primary me-2"></i><span class="__cf_email__" data-cfemail="6e070008012e140b00180f020b000907000b0b1c070009400d0103">[email&#160;protected]</span></a>
                         </div>
                     </div>
                     <div class="col-lg-4 text-center text-lg-end">
@@ -175,7 +175,7 @@
 						<img src="img/logo.png" alt="Zenval Engineering Logo" class="navbar-logo me-2">
 						<h1 class="text-primary m-0">Zenval Engineering</h1>
 					</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="fa fa-bars"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -1127,8 +1127,8 @@ Zenval Engineering, as a professional industrial valves manufacturer, produces a
                                 <div class="ms-4">
                                     <h4>Email</h4>
                                     <p class="mb-0">
-									<a href="mailto:info@zenvalengineering.com" class="text-decoration-none"><b>info@zenvalengineering.com</b></a> ,
-									<a href="mailto:sales@zenvalEngineering.com" class="text-decoration-none"><b>sales@zenvalEngineering.com</b></a>
+									<a href="/cdn-cgi/l/email-protection#80e9eee6efc0fae5eef6e1ece5eee7e9eee5e5f2e9eee7aee3efed" class="text-decoration-none"><b><span class="__cf_email__" data-cfemail="f39a9d959cb389969d85929f969d949a9d9696819a9d94dd909c9e">[email&#160;protected]</span></b></a> ,
+									<a href="/cdn-cgi/l/email-protection#780b19141d0b38021d160e19143d161f11161d1d0a11161f561b1715" class="text-decoration-none"><b><span class="__cf_email__" data-cfemail="82f1e3eee7f1c2f8e7ecf4e3eec7ece5ebece7e7f0ebece5ace1edef">[email&#160;protected]</span></b></a>
 									</p>
                                 </div>
                             </div>
@@ -1279,8 +1279,8 @@ Zenval Engineering, as a professional industrial valves manufacturer, produces a
 							<i class="fas fa-phone me-2"></i> +91 95944 91582</a>
 							<a href="tel:+919935398059" class="mb-3">
 							<i class="fas fa-phone me-2"></i> +91 99353 98059</a>
-						<a href="mailto:info@zenvalengineering.com">
-							<i class="fas fa-envelope me-2"></i> info@zenvalengineering.com</a>
+						<a href="/cdn-cgi/l/email-protection#fb92959d94bb819e958d9a979e959c92959e9e8992959cd5989496">
+							<i class="fas fa-envelope me-2"></i> <span class="__cf_email__" data-cfemail="30595e565f704a555e46515c555e57595e555542595e571e535f5d">[email&#160;protected]</span></a>
 						<a href="https://www.zenvalengineering.com" target="_blank">
 							<i class="fas fa-globe me-2"></i> www.zenvalengineering.com</a>
 						<a href=""><i class="fa fa-map-marker-alt me-2"></i> Gala No 3, D'Souza Compound, Nr. Yogiraj Vidyalaya, Safed Pul, Kurla-Andheri Rd, Mumbai, 400072</a>
@@ -1374,7 +1374,7 @@ Zenval Engineering, as a professional industrial valves manufacturer, produces a
 			</div>
 		</div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
@@ -1431,6 +1431,46 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<!-- Mobile: tap brand label to expand its submenu -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".dropdown-submenu .brand-menu").forEach(function (label) {
+        label.addEventListener("click", function (e) {
+            // Only intercept on mobile (navbar collapsed)
+            if (window.innerWidth >= 992) return;
+
+            e.preventDefault();
+            e.stopPropagation();
+
+            var submenu = label.nextElementSibling;
+            if (!submenu) return;
+
+            var isOpen = submenu.classList.contains("show");
+
+            // Close all other open submenus first
+            document.querySelectorAll(".dropdown-submenu .dropdown-menu.show").forEach(function (el) {
+                el.classList.remove("show");
+            });
+
+            // Toggle this one
+            if (!isOpen) {
+                submenu.classList.add("show");
+            }
+        });
+    });
+
+    // Close submenus when main navbar collapses
+    var navbarCollapse = document.getElementById("navbarCollapse");
+    if (navbarCollapse) {
+        navbarCollapse.addEventListener("hidden.bs.collapse", function () {
+            document.querySelectorAll(".dropdown-submenu .dropdown-menu.show").forEach(function (el) {
+                el.classList.remove("show");
+            });
+        });
+    }
+});
+</script>
+
 
 
 <script>
@@ -1455,42 +1495,4 @@ form.addEventListener("submit", async function(e) {
             form.reset();
             grecaptcha.reset();
         } else {
-            alert("Something went wrong. Please try again.");
-        }
-    } catch (error) {
-        alert("Error sending message.");
-    }
-});
-
-function showSuccessPopup() {
-    const popup = document.createElement("div");
-    popup.className = "success-popup";
-    popup.innerHTML = `
-        <div class="success-box">
-            <h4>Thank You!</h4>
-            <p>Your message has been sent successfully.</p>
-            <a href="https://wa.me/919423569124" target="_blank" class="btn btn-success mt-3">
-                Chat Instantly on WhatsApp
-            </a>
-        </div>
-    `;
-    document.body.appendChild(popup);
-    setTimeout(() => popup.remove(), 6000);
-}
-</script>
-
-
-
-    </body>
-
-</html>
-
-
-
-
-
-
-
-
-
-
+            alert("Something went wrong. Please try
