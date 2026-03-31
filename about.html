@@ -105,8 +105,8 @@
 								target="_blank"
 								rel="noopener">
 							<i class="fab fa-whatsapp text-success me-2"></i>+91 94235 69124</a>
-                            <a href="mailto:info@zenvalEngineering.com" class="text-muted me-0">
-							<i class="fas fa-envelope text-primary me-2"></i>info@zenvalEngineering.com</a>
+                            <a href="/cdn-cgi/l/email-protection#a8c1c6cec7e8d2cdc6dec9c4edc6cfc1c6cdcddac1c6cf86cbc7c5" class="text-muted me-0">
+							<i class="fas fa-envelope text-primary me-2"></i><span class="__cf_email__" data-cfemail="84edeae2ebc4fee1eaf2e5e8c1eae3edeae1e1f6edeae3aae7ebe9">[email&#160;protected]</span></a>
                         </div>
                     </div>
                     <div class="col-lg-4 text-center text-lg-end">
@@ -153,7 +153,7 @@
 						<img src="/img/logo.png" alt="Zenval Engineering Logo" class="navbar-logo me-2">
 						<h1 class="text-primary m-0">Zenval Engineering</h1>
 					</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="fa fa-bars"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -162,16 +162,14 @@
 
         <!-- Products Dropdown -->
         <div class="nav-item dropdown">
-    <a href="products.html" class="nav-link dropdown-toggle" role="button">
+    <a href="#" class="nav-link dropdown-toggle" id="productsDropdownToggle">
         Products
     </a>
             <div class="dropdown-menu rounded">
 			
                 <!-- Audco Valves -->
                 <div class="dropdown-submenu">
-                    <a href="brands/audco-valves/index.html" class="dropdown-item brand-menu" target="_blank">
-							Audco Valves
-							</a>
+                    <span class="dropdown-item brand-menu">Audco Valves</span>
                     <div class="dropdown-menu">
 				        <a href="/brands/audco-valves/" class="dropdown-item fw-bold" style="color: #000;">View All Products →</a>
                         <a href="brands/audco-valves/1-pc-ball-valve/" class="dropdown-item">Audco 1 PC Ball Valve</a>
@@ -190,9 +188,7 @@
 
                 <!-- Forbes Marshall Valves -->
                 <div class="dropdown-submenu">
-                    <a href="brands/forbes-marshall-valves/index.html" class="dropdown-item brand-menu" target="_blank">
-							Forbes Marshall Valves
-							</a>
+                    <span class="dropdown-item brand-menu">Forbes Marshall Valves</span>
                     <div class="dropdown-menu">
 						<a href="/brands/forbes-marshall-valves/" class="dropdown-item fw-bold" style="color: #000;">View All Products →</a>
                         <a href="brands/forbes-marshall-valves/piston-valves-psval/" class="dropdown-item">Piston Valves PSVAL</a>
@@ -214,9 +210,7 @@
 
                 <!-- Spirax Valves -->
                 <div class="dropdown-submenu">
-                    <a href="brands/spirax-valves/index.html" class="dropdown-item brand-menu" target="_blank">
-							Spirax Valves
-							</a>
+                    <span class="dropdown-item brand-menu">Spirax Valves</span>
                     <div class="dropdown-menu">
 						<a href="/brands/spirax-valves/" class="dropdown-item fw-bold" style="color: #000;">View All Products →</a>
                         <a href="brands/spirax-valves/prv-dp143/" class="dropdown-item">Spirax Marshall PRV DP143</a>
@@ -237,9 +231,7 @@
 
                 <!-- Uniklinger Valves -->
                 <div class="dropdown-submenu">
-                    <a href="brands/uniklinger-valves/index.html" class="dropdown-item brand-menu" target="_blank">
-							Uniklinger Valves
-							</a>
+                    <span class="dropdown-item brand-menu">Uniklinger Valves</span>
                     <div class="dropdown-menu">
 						<a href="/brands/uniklinger-valves/" class="dropdown-item fw-bold" style="color: #000;">View All Products →</a>
                         <a href="brands/uniklinger-valves/piston-valve/" class="dropdown-item">Uni Klinger Piston Valve</a>
@@ -491,8 +483,8 @@
 							<i class="fas fa-phone me-2"></i> +91 95944 91582</a>
 							<a href="tel:+919935398059" class="mb-3">
 							<i class="fas fa-phone me-2"></i> +91 99353 98059</a>
-						<a href="mailto:info@zenvalengineering.com">
-							<i class="fas fa-envelope me-2"></i> info@zenvalengineering.com</a>
+						<a href="/cdn-cgi/l/email-protection#365f585059764c535840575a5358515f585353445f58511855595b">
+							<i class="fas fa-envelope me-2"></i> <span class="__cf_email__" data-cfemail="0f666169604f756a61796e636a616866616a6a7d666168216c6062">[email&#160;protected]</span></a>
 						<a href="https://www.zenvalengineering.com" target="_blank">
 							<i class="fas fa-globe me-2"></i> www.zenvalengineering.com</a>
 						<a href=""><i class="fa fa-map-marker-alt me-2"></i> Gala No 3, D'Souza Compound, Nr. Yogiraj Vidyalaya, Safed Pul, Kurla-Andheri Rd, Mumbai, 400072</a>
@@ -553,7 +545,7 @@
                 </div>
             </div>
         </div>
-		<script>
+		<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 		
@@ -597,21 +589,70 @@
 <!-- Other JS files -->
 <script src="js/bootstrap.bundle.min.js"></script>
 
-<!-- Open submenu links in new tab -->
+<!-- Mobile Menu JS -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    document
-        .querySelectorAll(".dropdown-submenu .dropdown-menu a")
-        .forEach(link => {
-            link.setAttribute("target", "_blank");
-            link.setAttribute("rel", "noopener noreferrer");
+    var productsToggle = document.getElementById("productsDropdownToggle");
+    var productsMenu = productsToggle ? productsToggle.nextElementSibling : null;
+
+    if (productsToggle && productsMenu) {
+        productsToggle.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (window.innerWidth >= 992) return;
+            var isOpen = productsMenu.classList.contains("show");
+            closeAllDropdowns();
+            if (!isOpen) {
+                productsMenu.classList.add("show");
+                productsToggle.setAttribute("aria-expanded", "true");
+            }
         });
+    }
+
+    document.querySelectorAll(".dropdown-submenu .brand-menu").forEach(function (label) {
+        label.addEventListener("click", function (e) {
+            if (window.innerWidth >= 992) return;
+            e.preventDefault();
+            e.stopPropagation();
+            var submenu = label.nextElementSibling;
+            if (!submenu) return;
+            var isOpen = submenu.classList.contains("show");
+            document.querySelectorAll(".dropdown-submenu .dropdown-menu.show").forEach(function (el) {
+                el.classList.remove("show");
+            });
+            if (!isOpen) submenu.classList.add("show");
+        });
+    });
+
+    document.addEventListener("click", function (e) {
+        if (window.innerWidth >= 992) return;
+        if (!e.target.closest(".nav-item.dropdown")) closeAllDropdowns();
+    });
+
+    var navbarCollapse = document.getElementById("navbarCollapse");
+    if (navbarCollapse) {
+        navbarCollapse.addEventListener("hidden.bs.collapse", function () {
+            closeAllDropdowns();
+        });
+    }
+
+    function closeAllDropdowns() {
+        if (productsMenu) productsMenu.classList.remove("show");
+        if (productsToggle) productsToggle.setAttribute("aria-expanded", "false");
+        document.querySelectorAll(".dropdown-submenu .dropdown-menu.show").forEach(function (el) {
+            el.classList.remove("show");
+        });
+    }
 });
 </script>
 
-
-
-
-    </body>
-
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".dropdown-submenu .dropdown-menu a").forEach(function(link) {
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
+    });
+});
+</script>
+</body>
 </html>
