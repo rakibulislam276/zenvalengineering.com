@@ -1329,25 +1329,109 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <script>
-let quoteModal = new bootstrap.Modal(document.getElementById('quoteModal'));
+document.addEventListener("DOMContentLoaded", function () {
+    var quoteModalEl = document.getElementById("quoteModal");
+    var quoteModal = quoteModalEl ? new bootstrap.Modal(quoteModalEl) : null;
 
-document.querySelectorAll(".quote-btn").forEach(button => {
-    button.addEventListener("click", function() {
-        let product = this.getAttribute("data-product");
-        document.getElementById("selectedProduct").value = product;
-        quoteModal.show();
+    document.querySelectorAll(".quote-btn").forEach(function(button) {
+        button.addEventListener("click", function() {
+            var product = this.getAttribute("data-product");
+            var field = document.getElementById("selectedProduct");
+            if (field) field.value = product;
+            if (quoteModal) quoteModal.show();
+        });
     });
 });
 </script>
 
+<!-- Product Brand Filter -->
 <script>
-document.querySelectorAll(".filter-btn").forEach(button => {
-    button.addEventListener("click", function() {
-        let brand = this.getAttribute("data-brand");
+document.addEventListener("DOMContentLoaded", function () {
 
-        document.querySelectorAll(".filter-btn").forEach(btn => {
-            btn.classList.remove("btn-primary");
-            btn.classList.add("btn-outline-primary");
+    var filterBtns = document.querySelectorAll(".filter-btn");
+    var productItems = document.querySelectorAll(".product-item");
+
+    filterBtns.forEach(function(button) {
+        button.addEventListener("click", function() {
+            var brand = this.getAttribute("data-brand");
+
+            // Update active button styles
+            filterBtns.forEach(function(btn) {
+                btn.classList.remove("btn-primary");
+                btn.classList.add("btn-outline-primary");
+            });
+            this.classList.remove("btn-outline-primary");
+            this.classList.add("btn-primary");
+
+            // Show / hide product cards
+            productItems.forEach(function(item) {
+                if (brand === "all" || item.getAttribute("data-brand") === brand) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
         });
+    });
 
-        this.classList.remove("btn-outline-prima
+});
+</script>
+
+<!-- Mobile Menu JS -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var productsToggle = document.getElementById("productsDropdownToggle");
+    var productsMenu = productsToggle ? productsToggle.nextElementSibling : null;
+
+    if (productsToggle && productsMenu) {
+        productsToggle.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (window.innerWidth >= 992) return;
+            var isOpen = productsMenu.classList.contains("show");
+            closeAllDropdowns();
+            if (!isOpen) {
+                productsMenu.classList.add("show");
+                productsToggle.setAttribute("aria-expanded", "true");
+            }
+        });
+    }
+
+    document.querySelectorAll(".dropdown-submenu .brand-menu").forEach(function (label) {
+        label.addEventListener("click", function (e) {
+            if (window.innerWidth >= 992) return;
+            e.preventDefault();
+            e.stopPropagation();
+            var submenu = label.nextElementSibling;
+            if (!submenu) return;
+            var isOpen = submenu.classList.contains("show");
+            document.querySelectorAll(".dropdown-submenu .dropdown-menu.show").forEach(function (el) {
+                el.classList.remove("show");
+            });
+            if (!isOpen) submenu.classList.add("show");
+        });
+    });
+
+    document.addEventListener("click", function (e) {
+        if (window.innerWidth >= 992) return;
+        if (!e.target.closest(".nav-item.dropdown")) closeAllDropdowns();
+    });
+
+    var navbarCollapse = document.getElementById("navbarCollapse");
+    if (navbarCollapse) {
+        navbarCollapse.addEventListener("hidden.bs.collapse", function () {
+            closeAllDropdowns();
+        });
+    }
+
+    function closeAllDropdowns() {
+        if (productsMenu) productsMenu.classList.remove("show");
+        if (productsToggle) productsToggle.setAttribute("aria-expanded", "false");
+        document.querySelectorAll(".dropdown-submenu .dropdown-menu.show").forEach(function (el) {
+            el.classList.remove("show");
+        });
+    }
+});
+</script>
+</body>
+</html>
