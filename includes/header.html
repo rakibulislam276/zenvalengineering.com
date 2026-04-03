@@ -6,6 +6,18 @@
 </div>
 <!-- Spinner End -->
 
+<script>
+window.addEventListener("load", function () {
+    const spinner = document.getElementById("spinner");
+    if (spinner) {
+        spinner.classList.remove("show");
+        setTimeout(function () {
+            spinner.style.display = "none";
+        }, 300);
+    }
+});
+</script>
+
 <!-- Topbar Start -->
 <div class="container-fluid topbar px-0 d-none d-lg-block">
     <div class="container px-0">
