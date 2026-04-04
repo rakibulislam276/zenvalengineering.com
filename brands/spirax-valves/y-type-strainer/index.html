@@ -186,17 +186,24 @@ class="btn btn-dark">
 <!-- LOAD HEADER + FOOTER -->
 
 <script>
-
 document.addEventListener("DOMContentLoaded", async function () {
 
-const header = await fetch("../../../includes/header.html");
-document.getElementById("header").innerHTML = await header.text();
+    const header = await fetch("../../../includes/header.html");
+    document.getElementById("header").innerHTML = await header.text();
 
-const footer = await fetch("../../../includes/footer.html");
-document.getElementById("footer").innerHTML = await footer.text();
+    const footer = await fetch("../../../includes/footer.html");
+    document.getElementById("footer").innerHTML = await footer.text();
+
+    // Hide spinner after header & footer are fully loaded
+    const spinner = document.getElementById("spinner");
+    if (spinner) {
+        spinner.classList.remove("show");
+        setTimeout(function () {
+            spinner.style.display = "none";
+        }, 300);
+    }
 
 });
-
 </script>
 
 
