@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Page Not Found | Zenval Engineering</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 100px;
+    color: #22c55e;
+    margin: 0;
+}
+
+h2 {
+    margin: 10px 0;
+}
+
+p {
+    color: #cbd5f5;
+}
+
+.search-box {
+    margin: 25px 0;
+}
+
+input {
+    padding: 12px;
+    width: 280px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+
+button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 6px;
+    background: #22c55e;
+    color: #000;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.home {
+    background: #22c55e;
+    color: #000;
+}
+
+.whatsapp {
+    background: #25D366;
+    color: #000;
+}
+
+.section {
+    margin-top: 40px;
+}
+
+.links a {
+    display: inline-block;
+    margin: 8px;
+    padding: 8px 14px;
+    background: #334155;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.links a:hover {
+    background: #475569;
+}
+
+.footer {
+    margin-top: 40px;
+    color: #94a3b8;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>404</h1>
+<h2>Oops! Page Not Found</h2>
+<p>The page you're looking for doesn’t exist or has been moved.</p>
+<p>You will be redirected to our products page in <span id="countdown">5</span> seconds...</p>
+
+<!-- 🔍 SEARCH -->
+<div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search valves...">
+    <button onclick="searchPage()">Search</button>
+</div>
+
+<!-- 🔘 BUTTONS -->
+<div class="buttons">
+    <a href="/" class="btn home">🏠 Homepage</a>
+    <a href="https://wa.me/919423569124?text=Hello%20I%20need%20help%20with%20valves" target="_blank" class="btn whatsapp">💬 WhatsApp</a>
+</div>
+
+<!-- 🔥 POPULAR PRODUCTS -->
+<div class="section">
+    <h3>Popular Products</h3>
+    <div class="links">
+        <a href="/gate-valve.html">Gate Valve</a>
+        <a href="/globe-valve.html">Globe Valve</a>
+        <a href="/ball-valve.html">Ball Valve</a>
+        <a href="/check-valve.html">Check Valve</a>
+        <a href="/steam-trap.html">Steam Trap</a>
+    </div>
+</div>
+
+<!-- 🏷️ BRANDS -->
+<div class="section">
+    <h3>Browse by Brands</h3>
+    <div class="links">
+        <a href="/#audco">Audco</a>
+        <a href="/#forbes">Forbes Marshall</a>
+        <a href="/#spirax">Spirax</a>
+        <a href="/#ksb">KSB</a>
+        <a href="/#uniklinger">Uniklinger</a>
+    </div>
+</div>
+
+<div class="footer">
+    Zenval Engineering | Industrial Valve Supplier in India
+</div>
+
+<script>
+// 🔍 SEARCH FUNCTION
+function searchPage() {
+    var query = document.getElementById("searchInput").value.toLowerCase();
+    
+    if(query.includes("gate")) window.location.href = "/gate-valve.html";
+    else if(query.includes("globe")) window.location.href = "/globe-valve.html";
+    else if(query.includes("ball")) window.location.href = "/ball-valve.html";
+    else if(query.includes("check")) window.location.href = "/check-valve.html";
+    else if(query.includes("trap")) window.location.href = "/steam-trap.html";
+    else window.location.href = "/";
+}
+
+// ⏳ COUNTDOWN TIMER + REDIRECT
+let timeLeft = 5;
+let countdownElement = document.getElementById("countdown");
+
+let timer = setInterval(function() {
+    timeLeft--;
+    countdownElement.textContent = timeLeft;
+
+    if(timeLeft <= 0) {
+        clearInterval(timer);
+        window.location.href = "/products.html";
+    }
+}, 1000);
+</script>
+
+</body>
+</html>
