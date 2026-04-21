@@ -35,31 +35,101 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Zenval Engineering India Pvt Ltd",
-  "url": "https://www.zenvalengineering.com/",
-  "logo": "https://www.zenvalengineering.com/img/logo.png",
-  "image": "https://www.zenvalengineering.com/img/home-banner.jpg",
-  "description": "Authorized dealer and exporter of industrial valves including Audco, KSB, Spirax, Forbes Marshall and Uniklinger valves.",
-  "telephone": "+91-94235-69124",
-  "email": "info@zenvalengineering.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Gala No. 3, D'Souza Compound, Safed Pul, Kurla-Andheri Rd",
-    "addressLocality": "Mumbai",
-    "postalCode": "400072",
-    "addressCountry": "IN"
-  },
-  "sameAs": [
-    "https://www.facebook.com/zenvalengineering",
-    "https://www.instagram.com/zenvalengineering",
-    "https://www.linkedin.com/company/zenvalengineering"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+91-94235-69124",
-    "contactType": "customer service",
-    "availableLanguage": ["English", "Hindi"]
+  "@graph": [
+    {
+      "@type": ["Organization", "LocalBusiness"],
+      "@id": "https://zenvalengineering.com/#organization",
+      "name": "Zenval Engineering India",
+      "url": "https://zenvalengineering.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://zenvalengineering.com/images/logo.png"
+      },
+      "image": "https://zenvalengineering.com/images/logo.png",
+      "description": "Zenval Engineering India is a leading supplier of industrial valves, pipes, fittings, and flow control equipment serving oil & gas, chemical, power, and marine industries.",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "India"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "email": "info@zenvalengineering.com",
+          "contactType": "customer service"
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "sales@zenvalengineering.com",
+          "contactType": "sales"
+        }
+      ],
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://zenvalengineering.com/#website",
+      "url": "https://zenvalengineering.com",
+      "name": "Zenval Engineering India",
+      "publisher": {
+        "@id": "https://zenvalengineering.com/#organization"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "name": "Products & Services",
+      "description": "Industrial valves, pipes, fittings and flow control solutions by Zenval Engineering India",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Product",
+            "name": "Industrial Valves",
+            "description": "Gate valves, globe valves, ball valves, butterfly valves, check valves for industrial applications.",
+            "brand": { "@type": "Brand", "name": "Zenval Engineering India" },
+            "url": "https://zenvalengineering.com/products.html"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Product",
+            "name": "Pipes & Fittings",
+            "description": "High-quality industrial pipes and fittings for oil & gas, chemical, and power industries.",
+            "brand": { "@type": "Brand", "name": "Zenval Engineering India" },
+            "url": "https://zenvalengineering.com/products.html"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Product",
+            "name": "Flow Control Equipment",
+            "description": "Precision flow control solutions for marine, chemical, and power generation sectors.",
+            "brand": { "@type": "Brand", "name": "Zenval Engineering India" },
+            "url": "https://zenvalengineering.com/products.html"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Zenval Engineering India",
+  "url": "https://zenvalengineering.com/contact.html",
+  "mainEntity": {
+    "@id": "https://zenvalengineering.com/#organization"
   }
 }
 </script>
