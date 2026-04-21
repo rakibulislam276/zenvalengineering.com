@@ -22,29 +22,130 @@
 <meta name="twitter:title" content="Certifications | Zenval Engineering India">
 <meta name="twitter:description" content="ISO 9001:2015, MSME, IEC & GST certified industrial valve manufacturer in Mumbai. View all Zenval Engineering quality certificates.">
 <meta name="twitter:image" content="https://www.zenvalengineering.com/img/home-banner.jpg">
+
+	
+	
 <!-- ================= SCHEMA (STRUCTURED DATA) ================= -->
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Zenval Engineering India Pvt Ltd",
-  "url": "https://www.zenvalengineering.com/",
-  "logo": "https://www.zenvalengineering.com/img/logo.png",
-  "hasCredential": [
-    {"@type": "EducationalOccupationalCredential", "name": "ISO 9001:2015"},
-    {"@type": "EducationalOccupationalCredential", "name": "MSME Certificate"},
-    {"@type": "EducationalOccupationalCredential", "name": "IEC Certificate"},
-    {"@type": "EducationalOccupationalCredential", "name": "GST Certificate"},
-    {"@type": "EducationalOccupationalCredential", "name": "Certificate of Incorporation"}
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Mumbai",
-    "postalCode": "400072",
-    "addressCountry": "IN"
-  }
+  "@graph": [
+    {
+      "@type": ["Organization", "LocalBusiness"],
+      "@id": "https://www.zenvalengineering.com/#organization",
+      "name": "Zenval Engineering India Pvt Ltd",
+      "url": "https://www.zenvalengineering.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.zenvalengineering.com/img/logo.png"
+      },
+      "image": "https://www.zenvalengineering.com/img/logo.png",
+      "foundingDate": "2003",
+      "description": "ISO certified industrial valve manufacturer and supplier in Mumbai, India. Authorized dealer of Audco, KSB, Spirax, Forbes Marshall and Uniklinger valves.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Gala No. 3, D'Souza Compound, Safed Pul, Kurla-Andheri Rd",
+        "addressLocality": "Mumbai",
+        "postalCode": "400072",
+        "addressCountry": "IN"
+      },
+      "telephone": "+91-94235-69124",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "email": "info@zenvalengineering.com",
+          "contactType": "customer service"
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "sales@zenvalengineering.com",
+          "contactType": "sales"
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+91-94235-69124",
+          "contactType": "sales",
+          "areaServed": ["IN","AE","SA","QA","OM","KW","CN","TR","ZA"]
+        }
+      ],
+      "areaServed": ["IN","AE","SA","QA","OM","KW","CN","TR","ZA"],
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "value": 97
+      },
+      "sameAs": [
+        "https://www.facebook.com/zenvalengineering",
+        "https://www.instagram.com/zenvalengineering",
+        "https://www.linkedin.com/company/zenvalengineering",
+        "https://x.com/zenvalengineer"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.zenvalengineering.com/#website",
+      "url": "https://www.zenvalengineering.com/",
+      "name": "Zenval Engineering India Pvt Ltd",
+      "publisher": {
+        "@id": "https://www.zenvalengineering.com/#organization"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "name": "Products & Services",
+      "description": "Industrial valves, pipes, fittings and flow control solutions by Zenval Engineering India",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Product",
+            "name": "Industrial Valves",
+            "description": "Gate valves, globe valves, ball valves, butterfly valves, check valves for industrial applications.",
+            "brand": { "@type": "Brand", "name": "Zenval Engineering India Pvt Ltd" },
+            "url": "https://www.zenvalengineering.com/products.html"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Product",
+            "name": "Pipes & Fittings",
+            "description": "High-quality industrial pipes and fittings for oil & gas, chemical, and power industries.",
+            "brand": { "@type": "Brand", "name": "Zenval Engineering India Pvt Ltd" },
+            "url": "https://www.zenvalengineering.com/products.html"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Product",
+            "name": "Flow Control Equipment",
+            "description": "Precision flow control solutions for marine, chemical, and power generation sectors.",
+            "brand": { "@type": "Brand", "name": "Zenval Engineering India Pvt Ltd" },
+            "url": "https://www.zenvalengineering.com/products.html"
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
+	
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Certifications - Zenval Engineering India Pvt Ltd",
+  "url": "https://www.zenvalengineering.com/certificates.html",
+  "description": "View ISO and other industry certifications held by Zenval Engineering India Pvt Ltd.",
+  "isPartOf": { "@id": "https://www.zenvalengineering.com/#website" },
+  "mainEntity": { "@id": "https://www.zenvalengineering.com/#organization" }
+}
+</script>
+	
 <!-- ================= END SEO ================= -->
 
 <!-- Google Fonts -->
