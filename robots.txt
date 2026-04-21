@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Block unwanted pages
+Disallow: /404.html
+Disallow: /thank-you.html
+
+# Allow important pages
+Allow: /index.html
+Allow: /products.html
+
+# Sitemap (VERY IMPORTANT)
+Sitemap: https://zenvalengineering.com/sitemap.xml
